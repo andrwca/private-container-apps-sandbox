@@ -1,0 +1,17 @@
+{
+    "name": "Dotnet and Bicep Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:6.0",
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.vscode-github-actions",
+                "ms-azuretools.vscode-bicep",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit"
+            ]
+        }
+    }
+}
