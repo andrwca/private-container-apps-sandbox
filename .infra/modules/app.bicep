@@ -13,6 +13,9 @@ param privateDnsZones privateDnsZoneCollection
 @description('The private IP address of the firewall.')
 param firewallPrivateIpAddress string
 
+@description('The private IP address of the DNS resolver.')
+param dnsResolverInboundIpAddress string
+
 @description('Defines a collection of private DNS zone IDs.')
 type privateDnsZoneCollection = {
   containerApps: {
@@ -26,6 +29,11 @@ resource vnet 'Microsoft.Network/virtualNetworks@2024-05-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [addressSpace]
+    }
+    dhcpOptions: {
+      dnsServers: [
+        dnsResolverInboundIpAddress
+      ]
     }
   }
 }

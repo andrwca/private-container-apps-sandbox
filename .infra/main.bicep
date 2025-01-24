@@ -55,6 +55,7 @@ module app1 './modules/app.bicep' = {
     environment: environment
     addressSpace: app1AddressRange
     firewallPrivateIpAddress: hubModule.outputs.firewallPrivateIpAddress
+    dnsResolverInboundIpAddress: hubModule.outputs.dnsResolverInboundIpAddress
     privateDnsZones: {
       containerApps: {
         id: hubModule.outputs.privateDnsZone.containerApps.id
@@ -72,6 +73,7 @@ module app2 './modules/app.bicep' = {
     environment: environment
     addressSpace: app2AddressRange
     firewallPrivateIpAddress: hubModule.outputs.firewallPrivateIpAddress
+    dnsResolverInboundIpAddress: hubModule.outputs.dnsResolverInboundIpAddress
     privateDnsZones: {
       containerApps: {
         id: hubModule.outputs.privateDnsZone.containerApps.id

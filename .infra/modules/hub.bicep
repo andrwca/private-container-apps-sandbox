@@ -237,3 +237,4 @@ output privateDnsZone object = {
 }
 
 output firewallPrivateIpAddress string = firewall.outputs.firewallPrivateIpAddress
+output dnsResolverInboundIpAddress string = dnsResolverInboundIp
